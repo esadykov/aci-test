@@ -39,9 +39,11 @@ public class TopStrings {
             }
         };
 
+        //sort strings in map by counters
         SortedMap<String, Counter> sortedMap = new TreeMap<>(byValueComparator);
         sortedMap.putAll(unsortedMap);
 
+        //prepare result
         Iterator<String> sortedKeyIterator = sortedMap.keySet().iterator();
         Set<String> result = new LinkedHashSet<>(TEN);
 
