@@ -14,6 +14,7 @@ public class TopStrings {
 
         final HashMap<String, Counter> unsortedMap = new HashMap<>();
 
+        //count each string occurrences
         while (strings.hasNext()) {
             String item = strings.next();
             Counter counter = unsortedMap.get(item);
@@ -24,6 +25,7 @@ public class TopStrings {
                 unsortedMap.put(item, new Counter());
         }
 
+        //comparator for sort by values
         Comparator<String> byValueComparator = new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {
