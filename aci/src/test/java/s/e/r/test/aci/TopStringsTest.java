@@ -23,7 +23,7 @@ public class TopStringsTest {
                 "g", "j", "k", "h", "k", "l", "m", "n", "o", "g", "j", "k", "h", "k", "l", "m", "n", "o",
                 "a", "b", "c", "a", "b", "c", "d", "e", "f", "a", "b", "c", "a", "b", "c", "d", "e", "f",
                 "a", "b", "c", "a", "b", "c", "d", "e", "f", "a", "b", "c", "a", "b", "c", "d", "e", "f",
-                "g", "j", "k", "h", "k", "l", "m", "n", "o", "g", "j", "k", "h", "k", "l", "m", "n", "o",
+                "g", "j", "k", "h", "k", "l", "m", "n", "o", "j", "j", "k", "h", "k", "l", "m", "n", "o",
                 "p", "q", "r", "s", "t", "u", "w", "v", "x", "y", "z"
         ).iterator();
 
@@ -55,7 +55,6 @@ public class TopStringsTest {
         while (scanner.hasNext())
             words.add(scanner.next());
 
-        System.out.println(TopStrings.getTop10(words.iterator()));
     }
 
 }

@@ -34,23 +34,23 @@ public class TopStrings {
 
                 if (unsortedMap.get(o1).value < unsortedMap.get(o2).value)
                     return 1;
-                else
+                else if (unsortedMap.get(o1).value > unsortedMap.get(o2).value)
                     return -1;
+                else
+                    return (o1.compareTo(o2));
             }
         };
 
         //sort strings in map by counters
-        SortedMap<String, Counter> sortedMap = new TreeMap<>(byValueComparator);
-        sortedMap.putAll(unsortedMap);
+        SortedSet<String> sortedSet = new TreeSet<>(byValueComparator);
+        for (Map.Entry<String, Counter> entry : unsortedMap.entrySet())
+        {
+            sortedSet.add(entry.getKey());
+            if (sortedSet.size() > TEN)
+                sortedSet.remove(sortedSet.last());
+        }
 
-        //prepare result
-        Iterator<String> sortedKeyIterator = sortedMap.keySet().iterator();
-        Set<String> result = new LinkedHashSet<>(TEN);
-
-        while (sortedKeyIterator.hasNext() && result.size()< TEN )
-            result.add(sortedKeyIterator.next());
-
-        return result;
+        return sortedSet;
 
     }
 
